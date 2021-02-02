@@ -119,7 +119,11 @@ app.route("/api/guzelsozler")
         })
 });
 
+let port = process.env.PORT;
+if (port == "" || port == null) {
+    port = 5000;
+}
 
-app.listen(5000, function(){
-    console.log("5000 portuna bağlandık!")
+app.listen(port, function(){
+    console.log("port numarası : " +  port);
 });
